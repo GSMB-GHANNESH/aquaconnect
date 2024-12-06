@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transparent Supply Chain</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0a1f44; 
+      color: #ffffff; 
+      overflow-x: hidden;
+    }
+
+    .container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      color: #d1e3ff; 
+    }
+
+    .timeline {
+      position: relative;
+      margin: 50px auto;
+      padding: 20px 0;
+      width: 90%;
+      max-width: 900px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 4px;
+      height: 100%;
+      background: #1d3557; 
+      transform: translateX(-50%);
+    }
+
+    .timeline-step {
+      position: relative;
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .timeline-step:nth-child(even) {
+      transform: translateX(-30%);
+    }
+
+    .timeline-step:nth-child(odd) {
+      transform: translateX(30%);
+    }
+
+    .circle {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      background: #457b9d; 
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+      color: #ffffff;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(69, 123, 157, 0.7);
+    }
+
+    .timeline-content {
+      margin-top: 60px;
+      padding: 15px;
+      border-radius: 10px;
+      background: rgba(69, 123, 157, 0.1); 
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      color: #d1e3ff;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .timeline-content:hover {
+      background: rgba(69, 123, 157, 0.2); 
+      transform: scale(1.05);
+    }
+
+    .timeline-content h3 {
+      font-size: 1.5rem;
+      color: #ffffff;
+    }
+
+    .timeline-content p {
+      font-size: 1rem;
+      color: #d1e3ff;
+    }
+
+    .timeline-content ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .timeline-content ul li {
+      margin: 5px 0;
+      color: #d1e3ff;
+    }
+
+    .timeline-content ul li span {
+      color: #4caf50; 
+      font-weight: bold;
+    }
+
+    
+    .timeline-step {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeIn 1s forwards;
+    }
+
+    .timeline-step:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .timeline-step:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .timeline-step:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .timeline-step:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Transparent Supply Chain</h1>
+    <p>Follow the journey of sustainably sourced fish from the farm to your plate.</p>
+  </div>
+
+  <div class="timeline">
+    
+    <div class="timeline-step">
+      <div class="circle">1</div>
+      <div class="timeline-content">
+        <h3>Fish Farming</h3>
+        <p>Healthy, sustainably bred fish are raised with care to ensure minimal environmental impact.</p>
+        <p><strong>Impact:</strong></p>
+        <ul>
+          <li>Waste Reduced: <span>15%</span></li>
+          <li>Water Usage Optimized: <span>10%</span></li>
+        </ul>
+      </div>
+    </div>
+
+    
+    <div class="timeline-step">
+      <div class="circle">2</div>
+      <div class="timeline-content">
+        <h3>Processing</h3>
+        <p>Ethical methods ensure quality and reduce waste. Certified sustainable practices are implemented.</p>
+        <p><strong>Fun Fact:</strong> 90% of processed fish are exported to high-value markets.</p>
+        <ul>
+          <li>Energy Saved: <span>3,000 kWh/month</span></li>
+          <li>Waste Reduced: <span>20%</span></li>
+        </ul>
+      </div>
+    </div>
+
+    
+    <div class="timeline-step">
+      <div class="circle">3</div>
+      <div class="timeline-content">
+        <h3>Transportation</h3>
+        <p>Efficient transport methods reduce carbon footprint while maintaining fish freshness.</p>
+        <ul>
+          <li>CO2 Emissions Reduced: <span>500 kg/year</span></li>
+          <li>Average Delivery Time: <span>2 days</span></li>
+        </ul>
+      </div>
+    </div>
+
+   
+    <div class="timeline-step">
+      <div class="circle">4</div>
+      <div class="timeline-content">
+        <h3>Market</h3>
+        <p>Fresh, sustainably sourced fish delivered to ethical buyers who value transparency.</p>
+        <ul>
+          <li>Sustainable Buyers: <span>120+</span></li>
+          <li>Repeat Orders: <span>85%</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

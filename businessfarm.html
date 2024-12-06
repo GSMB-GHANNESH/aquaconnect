@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainable Fish Marketplace</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f3;
+        }
+        header {
+            background-color: #027373;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            width: 85%;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .search-bar, .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .search-bar input, .search-bar select, .filters select {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .product-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 280px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .product-card h3 {
+            color: #027373;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .product-card p {
+            color: #555;
+            font-size: 14px;
+            padding: 0 10px;
+            margin-bottom: 10px;
+        }
+        .btn {
+            background-color: #027373;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .btn:hover {
+            background-color: #025c5c;
+        }
+        footer {
+            background-color: #025c5c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Sustainable Fish Marketplace</h1>
+    <p>Connecting Ethical Fish Farmers with Conscious Buyers</p>
+</header>
+
+<div class="container">
+    
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search for fish, farm, or seller..." oninput="filterProducts()">
+        <select id="certification-filter" onchange="filterProducts()">
+            <option value="">All Certifications</option>
+            <option value="ASC">ASC Certified</option>
+            <option value="Organic">Organic</option>
+            <option value="Fair Trade">Fair Trade</option>
+        </select>
+    </div>
+    <div class="filters">
+        <select id="farm-type-filter" onchange="filterProducts()">
+            <option value="">All Farm Types</option>
+            <option value="Freshwater">Freshwater</option>
+            <option value="Marine">Marine</option>
+        </select>
+    </div>
+
+    
+    <div class="product-list" id="product-list"></div>
+</div>
+<footer>
+    <p>&copy; 2024 AQUACONNECT </p>
+</footer>
+
+<script>
+    
+    const products = [
+        { name: "Anabas", description: "ASC Certified, sustainably farmed in cold water", image: "c1.jpg", certifications: ["ASC"], farmType: "Marine" },
+        { name: "Red Snapper", description: "Organic feed, raised in clean freshwater.", image: "c2.jpg", certifications: ["Organic"], farmType: "Freshwater" },
+        { name: "Cat Fish", description: "Fair Trade certified, healthy and responsibly raised.", image: "c3.jpg", certifications: ["Fair Trade"], farmType: "Freshwater" },
+        { name: "cod", description: "MSC certified, wild-caught and sustainable.", image: "hfish.jpg", certifications: ["ASC"], farmType: "Marine" },
+        { name: "Hilsa", description: "Fair Trade certified ", image: "cod3.jpg", certifications: ["Fair Trade", "Organic"], farmType: "Marine" }
+    ];
+
+   
+    function displayProducts(filteredProducts) {
+    const productList = document.getElementById("product-list");
+    productList.innerHTML = ""; 
+    filteredProducts.forEach(product => {
+        const productCard = `
+            <div class="product-card">
+                <img src="${product.image}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <a href="farmer_connect.html" class="btn">BUY NOW</a>
+            </div>
+        `;
+        productList.innerHTML += productCard;
+    });
+}
+
+
+   
+    function filterProducts() {
+        const searchInput = document.getElementById("search-input").value.toLowerCase();
+        const certificationFilter = document.getElementById("certification-filter").value;
+        const farmTypeFilter = document.getElementById("farm-type-filter").value;
+
+        const filteredProducts = products.filter(product => {
+            const matchesSearch = product.name.toLowerCase().includes(searchInput) || product.description.toLowerCase().includes(searchInput);
+            const matchesCertification = certificationFilter ? product.certifications.includes(certificationFilter) : true;
+            const matchesFarmType = farmTypeFilter ? product.farmType === farmTypeFilter : true;
+
+            return matchesSearch && matchesCertification && matchesFarmType;
+        });
+
+        displayProducts(filteredProducts);
+    }
+
+   
+    displayProducts(products);
+    
+</script>
+
+</body>
+</html>

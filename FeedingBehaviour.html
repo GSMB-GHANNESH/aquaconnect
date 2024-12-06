@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feeding Behaviour</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('https://www.transparenttextures.com/patterns/fish-scales.png'), linear-gradient(to bottom, #00aaff, #0088cc);
+      background-size: cover;
+      background-attachment: fixed;
+      color: white;
+      overflow: hidden;
+    }
+    .container {
+      display: flex;
+      width: 80%;
+      height: 80%;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 15px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .video-container {
+      width: 50%;
+      height: 100%;
+      background: black;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .info-container {
+      width: 50%;
+      padding: 30px;
+      color: white;
+      font-size: 1.2rem;
+      text-align: left;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      height: 90%;
+      overflow-y: auto;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    }
+
+   
+    .info-container h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    }
+
+    .info-container h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #ffcc00;
+    }
+
+    .info-container p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+  
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+      }
+
+      .video-container,
+      .info-container {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+   
+    <div class="video-container">
+      <iframe src="FishFeed1.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div class="info-container">
+      <h1>Are There Changes In Eating Habits That Suggest Illness?</h1>
+      <h3>Yes, changes in eating habits can indicate that your fish might be sick.</h3>
+      <p>
+        A healthy fish shows a strong interest in food and comes to eat when it’s feeding time. If your fish usually eats aggressively but suddenly loses its appetite, this could be a sign of stress or illness.
+      </p>
+      <p>
+        Sometimes, a sick fish might start to eat less over time or completely stop eating. Observe if it’s ignoring food that it used to like.
+
+Another clue is how the fish handles food. Fish that are unwell may take food into their mouth and then spit it out repeatedly. This isn’t normal and suggests there’s an issue.
+
+Keep an eye on these behaviors during feeding times to catch any potential problems early. If you notice these habits, consider consulting with a vet who specializes in fish.
+    </div>
+  </div>
+
+</body>
+</html>

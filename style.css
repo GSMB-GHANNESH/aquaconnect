@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header, footer {
+    background-color: #008080;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px;
+    background-color: #FFA07A;
+    justify-items: center;
+    align-items: start;
+}
+
+.picture-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.picture-container img {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.picture-container button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color:White;
+    background-color: #4B0082; 
+    border: 5px  black;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+.picture-container button:hover {
+    background-color: #0056b3; 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); 
+    transform: translateY(-2px); 
+}
+.picture-container button:focus {
+    outline: 2px solid #0056b3; 
+    outline-offset: 2px;
+}
+
+.picture-container button:active {
+    background-color: #003f7f; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    transform: translateY(0);
+}
+.picture-container button:disabled {
+    background-color: #b3d7ff; 
+    color: #6c757d; 
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+.picture-container button.success {
+    background-color: #28a745;
+}
+
+.picture-container button:hover {
+    background-color: #218838;
+}
+
+.picture-container button:active {
+    background-color: #1e7e34;
+}
+
+.picture-container button.danger {
+    background-color: #dc3545;
+}
+
+.picture-container button.danger:hover {
+    background-color: #c82333;
+}
+
+.picture-container button.danger:active {
+    background-color: #bd2130;
+}
+.picture-container button.warning {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.picture-container button.warning:hover {
+    background-color: #e0a800;
+}
+
+.picture-container button.warning:active {
+    background-color: #d39e00;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Placed</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .confirmation-box {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px 50px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            animation: slideIn 1s ease-out;
+        }
+
+        .confirmation-box h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .confirmation-box p {
+            font-size: 1.2em;
+            margin: 15px 0;
+        }
+
+        .order-id {
+            font-weight: bold;
+            color: #ffeb3b;
+        }
+
+        .confirmation-box .checkmark {
+            font-size: 4em;
+            color: #4caf50;
+            margin: 20px 0;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button-container a {
+            text-decoration: none;
+            color: #fff;
+            background: #ff5722;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 1em;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease;
+        }
+
+        .button-container a:hover {
+            background: #e64a19;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-box">
+        <div class="checkmark">✔</div>
+        <h1>Order Confirmed!</h1>
+        <p>Thank you for your purchase. Your order ID is <span class="order-id">#12345</span>.</p>
+        <p>You'll receive an email confirmation shortly.</p>
+        <div class="button-container">
+            <a href="trackingsystem.html">Track Order</a>
+        </div>
+    </div>
+</body>
+</html>

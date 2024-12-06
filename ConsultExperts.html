@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Scrolling Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        .scroll-container {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px;
+            height: 100%;
+            scroll-snap-type: x mandatory;
+        }
+
+        .card {
+            flex: 0 0 300px;
+            background: #0073e6;
+            color: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+            scroll-snap-align: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+
+        .card:hover {
+            background: #005bb5;
+            transform: translateY(-10px);
+        }
+
+        .card h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 1em;
+        }
+
+        .card img {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .scroll-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .scroll-buttons button {
+            padding: 10px 15px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background: #0073e6;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .scroll-buttons button:hover {
+            background: #005bb5;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-container">
+        <div class="card">
+            <h2>Aquaculture Specialists</h2>
+            <p>Expertise: General knowledge of aquaculture systems, including fish farming techniques, system designs, and operational management.
+                Role: Help design and manage aquaculture systems for optimal fish health and productivity.</p>
+            <img src="aquaculturespecalist.jpg" alt="Image 1">
+        </div>
+        <div class="card">
+            <h2>Veterinarians Specialized in Aquatic Medicine</h2>
+            <p>Expertise: Diagnosis, treatment, and prevention of fish diseases.
+                Role: Conduct fish health checks, prescribe medications, recommend vaccination programs, and guide biosecurity measures.</p>
+            <img src="1.jpg" alt="Image 2">
+        </div>
+        <div class="card">
+            <h2>Nutritionists</h2>
+            <p>Expertise: Fish feed formulation, dietary requirements, and nutrient optimization.
+                Role: Develop species-specific feed programs to ensure optimal growth, reproduction, and immune system support.</p>
+            <img src="2.jpg" alt="Image 3">
+        </div>
+        <div class="card">
+            <h2>Environmental Scientists</h2>
+            <p>Expertise: Water quality, environmental impacts, and sustainability.
+                Role: Monitor water parameters, manage waste, and design eco-friendly farming systems to reduce the impact on natural ecosystems.</p>
+            <img src="3p.jpg" alt="Image 4">
+        </div>
+        <div class="card">
+            <h2>Fisheries Biologists</h2>
+            <p>Expertise: Fish biology, behavior, breeding, and population dynamics.
+                Role: Advise on stock selection, spawning practices, and maintaining biodiversity.</p>
+            <img src="4p.jpg" alt="Image 5">
+        </div>
+        <div class="card">
+            <h2>Biosecurity Experts</h2>
+            <p>Expertise: Disease prevention, quarantine protocols, and pest control.
+                Role: Develop biosecurity plans, monitor disease outbreaks, and mitigate the spread of pathogens.
+                </p>
+            <img src="5p.jpg" alt="Image 6">
+        </div>
+        <div class="card">
+            <h2> Engineers</h2>
+            <p>Expertise: Designing and maintaining aquaculture systems such as tanks, recirculating systems, and water treatment units.
+                Role: Build efficient, cost-effective systems to optimize water flow, aeration, and filtration.</p>
+            <img src="6p.jpg" alt="Image 7">
+        </div>
+        <div class="card">
+            <h2>Geneticists</h2>
+            <p>Expertise: Fish genetics and breeding for disease resistance and performance.
+                Role: Guide selective breeding programs for developing healthier, more resilient fish strains.</p>
+            <img src="7p.jpg" alt="Image 8">
+        </div>
+        <div class="card">
+            <h2>Regulatory and Policy Advisors</h2>
+            <p>Expertise: Knowledge of aquaculture regulations, certifications, and legal requirements.
+                Role: Ensure compliance with local and international laws, including environmental and food safety standards.</p>
+            <img src="78.jpg" alt="Image 9">
+        </div>
+        <div class="card">
+            <h2>Economists and Business Consultants</h2>
+            <p>Expertise: Financial planning, market analysis, and operational optimization.
+                Role: Help with cost-benefit analyses, market trends, and profitability strategies for aquaculture ventures..</p>
+            <img src="8p.jpg" alt="Image 10">
+        </div>
+        <div class="card">
+            <h2>Sustainability Experts</h2>
+            <p>Expertise: Sustainable aquaculture practices and alternative systems (e.g., integrated multi-trophic aquaculture, aquaponics).
+                Role: Minimize environmental impact and maximize resource efficiency.</p>
+            <img src="9p.jpg" alt="Image 11">
+        </div>
+        <div class="card">
+            <h2>Technology Consultants</h2>
+            <p>Expertise: Use of IoT, AI, and automation in aquaculture.
+                Role: Implement tools for real-time monitoring, predictive analytics, and operational automation.</p>
+            <img src="10p.jpg" alt="Image 12">
+        </div>
+    </div>
+    <div class="scroll-buttons">
+        <button onclick="scrollLeft()">← Scroll Left</button>
+        <button onclick="scrollRight()">Scroll Right →</button>
+    </div>
+
+    <script>
+        const container = document.querySelector('.scroll-container');
+
+        function scrollLeft() {
+            container.scrollBy({
+                left: -300, 
+                behavior: 'smooth'
+            });
+        }
+
+        function scrollRight() {
+            container.scrollBy({
+                left: 300, 
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>

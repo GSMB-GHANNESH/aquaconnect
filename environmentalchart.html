@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Environmental Factors in Aquaculture</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f8fc;
+      text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+    }
+    h1 {
+      color: #007acc;
+      margin-bottom: 20px;
+    }
+    canvas {
+      max-width: 100%;
+      margin: 20px auto;
+    }
+    .description {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #333;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Environmental Factors Affecting Fish Health</h1>
+  <canvas id="aquacultureChart"></canvas>
+  <div class="description">
+    This chart shows the importance of various environmental factors in aquaculture. Factors like temperature, dissolved oxygen, and water quality parameters significantly impact fish health. Regular monitoring and proper management help sustain optimal conditions.
+  </div>
+</div>
+
+<script>
+ 
+  const data = {
+    labels: [
+      "Temperature",
+      "Dissolved Oxygen",
+      "Salinity Changes",
+      "pH Variability",
+      "Ammonia & Nitrogen",
+      "Turbidity",
+      "Toxins & Contaminants",
+      "Algal Blooms",
+      "Seasonal Variations",
+      "Diseases",
+      "Stocking Density",
+      "Light Intensity"
+    ],
+    datasets: [{
+      label: "Impact on Fish Health (Scale 1-10)",
+      data: [9, 10, 7, 8, 9, 6, 8, 7, 6, 10, 8, 5],
+      backgroundColor: [
+        "#4CAF50", "#2196F3", "#FF9800", "#FF5722", "#3F51B5",
+        "#8BC34A", "#00BCD4", "#FFC107", "#9C27B0", "#E91E63",
+        "#607D8B", "#795548"
+      ],
+      borderColor: "#333",
+      borderWidth: 1
+    }]
+  };
+
+  const config = {
+    type: 'bar',
+    data: data,
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top'
+        },
+        tooltip: {
+          enabled: true
+        }
+      },
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: 'Environmental Factors',
+            color: '#333',
+            font: {
+              size: 14,
+              weight: 'bold'
+            }
+          }
+        },
+        y: {
+          title: {
+            display: true,
+            text: 'Impact Scale (1-10)',
+            color: '#333',
+            font: {
+              size: 14,
+              weight: 'bold'
+            }
+          },
+          ticks: {
+            stepSize: 1
+          }
+        }
+      }
+    }
+  };
+
+  
+  const ctx = document.getElementById('aquacultureChart').getContext('2d');
+  const aquacultureChart = new Chart(ctx, config);
+</script>
+
+</body>
+</html>

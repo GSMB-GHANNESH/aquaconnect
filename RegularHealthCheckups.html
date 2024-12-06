@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factors Affecting Fish Health</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      background-color: #f4f4f4;
+    }
+
+    .header {
+      text-align: center;
+      background-color: #0078D7;
+      color: white;
+      padding: 20px 0;
+      font-size: 28px;
+    }
+
+    
+    .main-container {
+      display: flex;
+      flex-wrap: wrap;
+      height: 100vh; 
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 20px;
+      background-color: #e3f2fd;
+      box-sizing: border-box;
+    }
+
+    .content div {
+      background-color: #ffffff;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      font-weight: bold;
+    }
+
+   
+    .image-section {
+      flex: 1;
+      background: url('https://via.placeholder.com/600x800') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    .image-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+   
+    @media (max-width: 768px) {
+      .main-container {
+        flex-direction: column;
+      }
+
+      .content, .image-section {
+        flex: none;
+        height: 50vh;
+      }
+
+      .image-section img {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+ 
+  <div class="header">
+    Factors Affecting Fish Health
+  </div>
+
+ 
+  <div class="main-container">
+    
+    <div class="content">
+      <div>1. Rapid change in temperature</div>
+      <div>2. Rapid change in pH </div>
+      <div>3. High suspended solid loads</div>
+      <div>4. High stocking density</div>
+      <div>5. Insufficient dissolve oxygen</div>
+      <div>6. Hydrogen sulfide</div>
+      <div>7. Poor nutrition"</div>
+      <div>8. Poor handling</div>
+    </div>
+
+   
+    <div class="image-section">
+      
+      <img src="protectingfish.jpg" alt="Fish Health">
+    </div>
+  </div>
+
+</body>
+</html>

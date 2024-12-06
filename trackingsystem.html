@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Tracking System</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1e90ff, #00bcd4);
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #fff;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: linear-gradient(90deg, #0072ff, #00c6ff);
+    }
+    .alert {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid;
+      border-radius: 8px;
+      font-size: 16px;
+      display: none;
+    }
+    .alert.success {
+      border-color: #4caf50;
+      background-color: #d4edda;
+      color: #155724;
+    }
+    .alert.danger {
+      border-color: #f44336;
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+    .journey {
+      margin-top: 20px;
+      position: relative;
+    }
+    .journey-line {
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: #ddd;
+    }
+    .journey-point {
+      position: relative;
+      padding-left: 50px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .journey-point::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      width: 20px;
+      height: 20px;
+      background: #ddd;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .journey-point.active::before {
+      background: #00bcd4;
+      border-color: #00bcd4;
+    }
+    .journey-point span {
+      display: block;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Product Tracking System</h1>
+<div class="container">
+  <form id="trackingForm">
+    <div class="form-group">
+      <label for="trackingId">Enter Tracking ID:</label>
+      <input type="text" id="trackingId" name="trackingId" placeholder="Enter tracking ID" required>
+    </div>
+    <button type="button" onclick="trackProduct()">Track Product</button>
+  </form>
+
+  <div id="alertBox" class="alert"></div>
+  
+  <div id="journeyBox" class="journey" style="display: none;">
+    <div class="journey-line"></div>
+  </div>
+</div>
+
+<script>
+  // Sample data for tracking with intermediate stops
+  const productData = {
+    "12345": {
+      status: "In Transit",
+      details: "The product is currently on the way to the delivery hub.",
+      journey: ["Order Placed", "Packed", "Shipped", "In Transit", "Delivery Hub", "Out for Delivery"]
+    },
+    "67890": {
+      status: "Delivered",
+      details: "The product was delivered on 15th Nov 2024.",
+      journey: ["Order Placed", "Packed", "Shipped", "In Transit", "Delivery Hub", "Delivered"]
+    },
+    "11223": {
+      status: "Processing",
+      details: "The product is being prepared for shipment.",
+      journey: ["Order Placed", "Processing"]
+    }
+  };
+
+  // Function to track product
+  function trackProduct() {
+    const trackingId = document.getElementById("trackingId").value.trim();
+    const alertBox = document.getElementById("alertBox");
+    const journeyBox = document.getElementById("journeyBox");
+
+    // Reset previous results
+    alertBox.style.display = "none";
+    journeyBox.style.display = "none";
+    journeyBox.innerHTML = '<div class="journey-line"></div>';
+
+    if (!trackingId) {
+      alertBox.className = "alert danger";
+      alertBox.innerHTML = "Please enter a valid tracking ID.";
+      alertBox.style.display = "block";
+      return;
+    }
+
+    const product = productData[trackingId];
+
+    if (product) {
+      alertBox.className = "alert success";
+      alertBox.innerHTML = `Tracking ID found. ${product.details}`;
+      alertBox.style.display = "block";
+
+      // Build journey
+      product.journey.forEach((stop, index) => {
+        const point = document.createElement("div");
+        point.className = `journey-point ${index < product.journey.length - 1 ? "active" : ""}`;
+        point.innerHTML = `<span>${stop}</span>`;
+        journeyBox.appendChild(point);
+      });
+
+      journeyBox.style.display = "block";
+    } else {
+      alertBox.className = "alert danger";
+      alertBox.innerHTML = "Tracking ID not found. Please check and try again.";
+      alertBox.style.display = "block";
+    }
+  }
+</script>
+
+</body>
+</html>
+

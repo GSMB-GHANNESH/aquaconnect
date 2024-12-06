@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Practices for Fish</title>
+    <style>
+    
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+            text-align: center; 
+        }
+
+        h1 {
+            color: #00796b;
+            font-size: 36px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .big-card {
+            background-color: #ff8a65;
+            color: white;
+            border-radius: 20px;
+            margin-left: 40px;
+            border-radius: 30px;
+            padding: 40px;
+            width: 80%;
+            max-width: 1200px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px; 
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .big-card:hover {
+            transform: translateY(-5px);
+            background-color: #ff7043; 
+        }
+
+        .big-card h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .big-card p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            width: 80%;
+            max-width: 1200px;
+            justify-items: center;
+            margin-top: 30px;
+            margin-left: 50px;
+
+        }
+
+        
+        .card {
+            background-color: #ffcc80;
+            color: #37474f;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            width: 250px;
+            height: 250px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        
+        .card:hover {
+            transform: translateY(-10px);
+            background-color: #ffb74d;
+        }
+
+        .card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+       
+        @media (max-width: 768px) {
+            .big-card {
+                width: 90%;
+            }
+
+            .card {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card-container {
+                grid-template-columns: 1fr;
+                align-items: center;
+            }
+
+            .card {
+                width: 180px;
+                height: 180px;
+            }
+        }
+
+        
+        .scrollable-content {
+            width: 100%;
+            overflow-y: auto;
+            padding-bottom: 50px; 
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Different method of chemical treatment</h1>
+
+    
+    <div class="scrollable-content">
+        
+        <div class="big-card">
+            <h2></h2>
+            <p>Treatment may be applied in very many ways and the particular type
+                of treatment to be applied is to be decided as per the specific situations
+                encountered. There are three way of applying the treatment e.g. (1) adding
+                chemical to the water, (2) adding chemical to the feed and (3) administering
+                chemicals directly to individual fish.</p>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <h3>Indefinite bath:</h3>
+                <p>This is most widely used in ponds where a low
+                    concentration of a chemical or drug is applied and is allowed to
+                    dissipate naturally.</p>
+            </div>
+            <div class="card">
+                <h3>Feedings</h3>
+                <p>Treatment through feed aims at reaching the chemical in
+                    to the stomach of the sick fish at proper dosage</p>
+            </div>
+            <div class="card">
+                <h3>Injection</h3>
+                <p>Large and valuable fish may-be treated by injecting the
+                    medicine in to the body.
+                    </p>
+            </div>
+            <div class="card">
+                <h3>Topical application</h3>
+                <p>Sometimes valuable fish may be treated by
+                    direct topical application of the drug.</p>
+            </div>
+            <div class="card">
+                <h3>Flush</h3>
+                <p>: Here concentrated solution of the drug or chemical is added
+                    to the inlet and allowed to pass through the tank or the raceway
+                    with the water flow
+                </p>
+            
+        
+    </div>
+
+</body>
+</html>
+

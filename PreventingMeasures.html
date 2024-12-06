@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prevention Measures for Fish Health</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            z-index: 1000;
+        }
+        section {
+            padding: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+        .heading {
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #0073e6;
+            font-weight: bold;
+        }
+        .interactive-division {
+            padding: 20px;
+            background: #0073e6;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .interactive-division:hover {
+            background: #005bb5;
+            transform: translateY(-5px);
+        }
+        .right-container {
+            margin-top: 20px;
+            height: 300px;
+            background: url('fishprotection2.webp') no-repeat center center;
+            background-size: cover;
+            border-radius: 8px;
+            transition: transform 0.5s ease;
+        }
+        .right-container:hover {
+            transform: scale(1.05);
+        }
+        .scroll-btns {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .scroll-btns button {
+            padding: 10px 15px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background: #0073e6;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .scroll-btns button:hover {
+            background: #005bb5;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header>Prevention Measures for Fish Good Health</header>
+    <section id="nutrition">
+        <div class="interactive-division">
+            <h2>Nutrition and Feeding</h2>
+            <p>Balanced Diet: Provide high-quality, species-specific feeds with essential nutrients. Avoid Overfeeding: Prevent water quality degradation by feeding in controlled amounts.</p>
+        </div>
+        <div class="right-container"></div>
+    </section>
+    <section id="disease">
+        <div class="interactive-division">
+            <h2>Disease Prevention</h2>
+            <p>Quarantine Practices: Isolate new or sick fish before introducing them into the main population. Regular Health Checks: Monitor for signs of disease, such as abnormal swimming, lesions, or discoloration. Vaccination: Use vaccines where applicable to prevent common diseases.</p>
+        </div>
+    </section>
+    <section id="stress">
+        <div class="interactive-division">
+            <h2>Stress Reduction</h2>
+            <p>Minimize Handling: Reduce handling and transport to lower stress levels in fish. Noise and Light Control: Maintain a stable environment with minimal disturbances.</p>
+        </div>
+    </section>
+    <section id="genetic">
+        <div class="interactive-division">
+            <h2>Genetic and Breeding Practices</h2>
+            <p>Disease-Resistant Strains: Opt for genetically improved fish strains that are resistant to common diseases.</p>
+        </div>
+    </section>
+    <section id="monitoring">
+        <div class="interactive-division">
+            <h2>Monitoring and Record-Keeping</h2>
+            <p>Disinfection: Regularly clean tanks, nets, and equipment to prevent contamination. Control Entry: Limit access to the facility and ensure workers follow biosecurity protocols.</p>
+        </div>
+    </section>
+    <section id="training">
+        <div class="interactive-division">
+            <h2>Training and Awareness</h2>
+            <p>Staff Education: Train workers in fish health management and early disease detection. Regular Updates: Stay informed about advancements in aquaculture practices and technologies.</p>
+        </div>
+    </section>
+    <div class="scroll-btns">
+        <button onclick="scrollToSection('nutrition')">Nutrition</button>
+        <button onclick="scrollToSection('disease')">Disease</button>
+        <button onclick="scrollToSection('stress')">Stress</button>
+        <button onclick="scrollToSection('genetic')">Genetic</button>
+        <button onclick="scrollToSection('monitoring')">Monitoring</button>
+        <button onclick="scrollToSection('training')">Training</button>
+    </div>
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

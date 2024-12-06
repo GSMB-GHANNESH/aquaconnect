@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technologies</title>
+    <style>
+      
+      body {
+        background-color: #cce6ff; 
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+
+     
+      h1 {
+        text-align: center;
+        font-size: 3em;
+        color: red;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+    
+      .objectives-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff; 
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .objective-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .objective-item:last-child {
+        border-bottom: none;
+      }
+
+      .objective-image {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-right: 20px;
+        object-fit: cover;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .objective-text {
+        font-size: 1.5em;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Technologies</h1>
+
+    
+    <div class="objectives-container">
+      <div class="objective-item">
+        <img 
+          src="s4.jpg" 
+          alt="Fish population" 
+          class="objective-image"
+        />
+        <div class="objective-text">Remote sensing for large-scale changes</div>
+      </div>
+      <div class="objective-item">
+        <img 
+          src="s5.jpg" 
+          alt="Aquatic habitat" 
+          class="objective-image"
+        />
+        <div class="objective-text">IoT sensors for real-time water quality data</div>
+      </div>
+      <div class="objective-item">
+        <img 
+          src="data:image/png;base64,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" 
+          alt="Sustainable fisheries" 
+          class="objective-image"
+        />
+        <div class="objective-text">eDNA for species identification and biodiversity analysis</div>
+      </div>
+      <div class="objective-item">
+        <img 
+          src="s6.jpg" 
+          alt="Climate change" 
+          class="objective-image"
+        />
+        <div class="objective-text">Drones and hydroacoustic systems for habitat and fish tracking</div>
+      </div>
+    </div>
+  </body>
+</html>
