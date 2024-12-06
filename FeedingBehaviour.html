@@ -12,7 +12,7 @@
     }
     body {
       font-family: Arial, sans-serif;
-      height: 100vh;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -20,17 +20,20 @@
       background-size: cover;
       background-attachment: fixed;
       color: white;
-      overflow: hidden;
+      overflow: auto; /* Allows scrolling */
+      scroll-behavior: smooth; /* Smooth scroll effect */
     }
     .container {
       display: flex;
       width: 80%;
+      max-width: 1200px; /* Prevents the container from becoming too wide on large screens */
       height: 80%;
       justify-content: space-between;
       align-items: center;
       border-radius: 15px;
       box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
       background: rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
     }
 
     .video-container {
@@ -49,7 +52,7 @@
 
     .info-container {
       width: 50%;
-      padding: 30px;
+      padding: 2vw;
       color: white;
       font-size: 1.2rem;
       text-align: left;
@@ -60,30 +63,28 @@
       box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
     }
 
-   
     .info-container h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+      font-size: 3vw; /* Use relative size for responsiveness */
+      margin-bottom: 1.5em;
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
     }
 
     .info-container h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
+      font-size: 2vw;
+      margin-bottom: 1em;
       color: #ffcc00;
     }
 
     .info-container p {
-      font-size: 1.2rem;
+      font-size: 1.5vw;
       line-height: 1.6;
-      margin-bottom: 15px;
+      margin-bottom: 1.5em;
     }
 
-  
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       .container {
         flex-direction: column;
-        width: 100%;
+        width: 95%;
         height: auto;
       }
 
@@ -93,13 +94,69 @@
         height: auto;
         margin-bottom: 20px;
       }
+
+      .info-container h1 {
+        font-size: 5vw; /* Adjust for smaller screens */
+      }
+
+      .info-container h3 {
+        font-size: 4vw;
+      }
+
+      .info-container p {
+        font-size: 3vw;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .info-container h1 {
+        font-size: 6vw;
+      }
+
+      .info-container h3 {
+        font-size: 5vw;
+      }
+
+      .info-container p {
+        font-size: 4vw;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+
+      .container {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        padding: 5vw;
+      }
+
+      .video-container,
+      .info-container {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      .info-container h1 {
+        font-size: 7vw;
+      }
+
+      .info-container h3 {
+        font-size: 6vw;
+      }
+
+      .info-container p {
+        font-size: 5vw;
+      }
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-   
     <div class="video-container">
       <iframe src="FishFeed1.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
@@ -112,12 +169,16 @@
       </p>
       <p>
         Sometimes, a sick fish might start to eat less over time or completely stop eating. Observe if it’s ignoring food that it used to like.
-
-Another clue is how the fish handles food. Fish that are unwell may take food into their mouth and then spit it out repeatedly. This isn’t normal and suggests there’s an issue.
-
-Keep an eye on these behaviors during feeding times to catch any potential problems early. If you notice these habits, consider consulting with a vet who specializes in fish.
+      </p>
+      <p>
+        Another clue is how the fish handles food. Fish that are unwell may take food into their mouth and then spit it out repeatedly. This isn’t normal and suggests there’s an issue.
+      </p>
+      <p>
+        Keep an eye on these behaviors during feeding times to catch any potential problems early. If you notice these habits, consider consulting with a vet who specializes in fish.
+      </p>
     </div>
   </div>
 
 </body>
 </html>
+
