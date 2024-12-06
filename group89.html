@@ -12,9 +12,10 @@
       color: white;
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow: hidden;
+      align-items: flex-start; /* Changed to allow vertical alignment of the content */
+      height: auto;
+      min-height: 100vh;
+      overflow-y: scroll; /* Enable vertical scrolling */
     }
 
     .container {
@@ -23,6 +24,7 @@
       gap: 20px;
       width: 90%;
       max-width: 1200px;
+      padding-top: 20px; /* Added padding to avoid content being too close to the top */
     }
 
     .box {
@@ -65,28 +67,28 @@
 <body>
   <div class="container">
     <div class="box">
-      <h3>Monotor Feed Consumption</h3>
-      <p>Overfeeding can lead to excess waste and water pollution. Always measure feed carefully to ensure fish are getting only what they need</p>
+      <h3>Monitor Feed Consumption</h3>
+      <p>Overfeeding can lead to excess waste and water pollution. Always measure feed carefully to ensure fish are getting only what they need.</p>
     </div>
     <div class="box">
       <h3>Regularly clean tanks</h3>
-      <p>Keep fish tanks clean by removing debris and waste buildup. This helps maintain water quality and reduces unnecessary waste accumulation</p>
+      <p>Keep fish tanks clean by removing debris and waste buildup. This helps maintain water quality and reduces unnecessary waste accumulation.</p>
     </div>
     <div class="box">
       <h3>Use Sustainable Feed</h3>
       <p>Choose high-quality, sustainable feed to reduce waste and improve fish growth. Organic or locally sourced feed can be a great option!</p>
     </div>
     <div class="box">
-      <h3>Efficent Water Management</h3>
-      <p>LRecycle and reuse water wherever possible. Regular water quality checks ensure you catch issues early, reducing waste and improving fish health</p>
+      <h3>Efficient Water Management</h3>
+      <p>Recycle and reuse water wherever possible. Regular water quality checks ensure you catch issues early, reducing waste and improving fish health.</p>
     </div>
     <div class="box">
-      <h3>Maintain Optoimal Fish Desnsity</h3>
-      <p>Avoid overcrowding! Overcrowded tanks create excess waste. Ensure your fish have ample space to swim and thrive</p>
+      <h3>Maintain Optimal Fish Density</h3>
+      <p>Avoid overcrowding! Overcrowded tanks create excess waste. Ensure your fish have ample space to swim and thrive.</p>
     </div>
     <div class="box">
       <h3>Use Bio Filters</h3>
-      <p>Implement biofilters to naturally filter and clean the water. This reduces the need for chemical treatments and keeps your system sustainable</p>
+      <p>Implement biofilters to naturally filter and clean the water. This reduces the need for chemical treatments and keeps your system sustainable.</p>
     </div>
   </div>
 </body>
